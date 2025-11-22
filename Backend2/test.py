@@ -12,10 +12,10 @@ socketio = SocketIO(app, cors_allowed_origins="*") # Izinkan koneksi dari semua 
 
 # --- Konfigurasi MySQL ---
 # GANTI DENGAN KREDENSIAL DAN NAMA DATABASE ANDA
-MYSQL_HOST = 'localhost'
-MYSQL_USER = 'root'
-MYSQL_PASSWORD = 'baru1234' 
-MYSQL_DB = 'iot_db' 
+MYSQL_HOST = 'iot-suhu-iot-c570.b.aivencloud.com'
+MYSQL_USER = 'avnadmin'
+MYSQL_PASSWORD = 'AVNS_oq8ZsY-JXbxT9ii_lNT'
+MYSQL_DB = 'defaultdb' 
 
 def get_db_connection():
     """Membuat dan mengembalikan objek koneksi PyMySQL."""
@@ -125,4 +125,5 @@ def get_historical_data():
 if __name__ == '__main__':
     # Pastikan host='0.0.0.0' agar ESP8266 dapat terhubung
     print("Server Flask dan SocketIO berjalan di http://0.0.0.0:5000")
+
     socketio.run(app, host='0.0.0.0', port=5000, debug=True)    
